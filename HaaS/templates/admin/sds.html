@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Attack Sessions - DeceptiBank Security Center{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/admin.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="admin-dashboard">
+    <!-- Header -->
+    <div class="admin-header">
+        <div class="header-content">
+            <h1><i class="fas fa-shield-alt"></i> Attack Sessions Overview</h1>
+            <p>AI-powered analysis of attacker behavior and active threat sessions</p>
+        </div>
+        <div class="header-actions">
+            <button class="btn btn-outline" onclick="exportSessions()">
+                <i class="fas fa-download"></i> Export CSV
+            </button>
+            <button class="btn btn-primary" onclick="refreshDashboard()">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+        <div class="stat-card threat-high">
+            <div class="stat-icon"><i class="fas fa-skull-crossbones"></i></div>
+            <div class="stat-content">
+                <h3>{{ stats.high_threat_attempts or 0 }}</h3>
+                <p>High Threat Sessions</p>
+                <span class="stat-change">AI Detected</span>
+            </div>
+        </div>
+        <div class="stat-card threat-medium">
+            <div class="stat-icon"><i class="fas fa-bug"></i></div>
+            <div class="stat-content">
+                <h3>{{ stats.suspicious_attempts or 0 }}</h3>
+                <p>Suspicious Attempts</p>
+                <span class="stat-change">{{ stats.success_rate or 0 }}% Detection Rate</span>
+            </div>
+        </div>
+        <div class="stat-card threat-low">
+            <div class="stat-icon"><i class="fas fa-globe"></i></div>
+            <div class="stat-content">
+                <h3>{{ stats.unique_ips or 0 }}</h3>
+                <p>Unique Attack IPs</p>
+                <span class="stat-change">{{ stats.suspicious_ips or 0 }} Flagged</span>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="stat-content">
+                <h3>{{ stats.total_attempts or 0 }}</h3>
+                <p>Total Honeypot Triggers</p>
+                <span class="stat-change">24-hour window</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attack Sessions Table -->
+    <div class="logs-section">
+        <h2><i class="fas fa-network-wired"></i> Active Attack Sessions</h2>
+        <div class="logs-table-container">
+            <table class="logs-table">
+                <thead>
+                    <tr>
+                        <th>Session ID</th>
+                        <th>IP Address</th>
+                        <th>First Seen</th>
+                        <th>Last Seen</th>
+                        <th>Total Requests</th>
+                        <th>Threat Score</th>
+                        <th>Attack Types</th>
+                        <th>Geolocation</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in sessions %}
+                    <tr class="log-row {% if session.threat_score >= 75 %}suspicious{% endif %}">
+                        <td>{{ session.session_id }}</td>
+                        <td>{{ session.ip_address or '-' }}</td>
+                        <td>{{ session.first_seen or '-' }}</td>
+                        <td>{{ session.last_seen or '-' }}</td>
+                        <td>{{ session.total_requests or 0 }}</td>
+                        <td>
+                            <span class="threat-badge 
+                                {% if session.threat_score >= 80 %}High
+                                {% elif session.threat_score >= 50 %}Medium
+                                {% else %}Low{% endif %}">
+                                {{ session.threat_score or 0 }}
+                            </span>
+                        </td>
+                        <td>{{ session.attack_types or '-' }}</td>
+                        <td>{{ session.geolocation or 'Unknown' }}</td>
+                        <td>{{ "Blocked" if session.is_blocked else "Active" }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="9" class="no-logs">No active attack sessions.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+function refreshDashboard() {
+    location.reload();
+}
+function exportSessions() {
+    window.location.href = "{{ url_for('export_attack_sessions') }}";
+}
+</script>
+{% endblock %}

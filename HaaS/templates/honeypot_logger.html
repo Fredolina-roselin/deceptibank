@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Honeypot Logs - DeceptiBank{% endblock %}
+{% block content %}
+<div class="admin-dashboard">
+  <h2><i class="fas fa-bug"></i> Honeypot Attack Logs</h2>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>IP Address</th>
+        <th>Attack Types</th>
+        <th>Threat Score</th>
+        <th>Last Seen</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for log in logs %}
+      <tr>
+        <td>{{ log[0] }}</td>
+        <td>{{ log[1] }}</td>
+        <td>{{ log[2] }}</td>
+        <td>{{ log[3] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

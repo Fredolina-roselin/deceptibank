@@ -1,0 +1,99 @@
+2025-10-12 17:27:21,466 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:27:22,596 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:27:23,268 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:27:23,468 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:27:23,847 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:42,207 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:42,207 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:33:42,607 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:42,611 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:33:43,066 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:43,074 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:33:56,045 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:56,060 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:33:56,083 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:56,101 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:33:56,129 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:56,137 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:33:56,162 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:33:56,167 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:34:14,111 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:34:14,111 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:34:31,716 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:34:31,716 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:34:46,540 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:34:46,540 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:34:46,555 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:34:46,555 - ERROR - Honeypot trigger failed: rollback
+2025-10-12 17:34:46,571 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:34:46,571 - ERROR - Honeypot trigger failed: rollback
+2025-10-12 17:35:00,897 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:35:00,897 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:35:01,214 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:35:01,214 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:35:01,546 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:35:01,546 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:35:04,739 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:35:04,739 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:50:04,363 - ERROR - Honeypot DB insert failed: add
+2025-10-12 17:52:26,521 - ERROR - Honeypot DB insert failed: add
+2025-10-12 17:54:55,435 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:54:55,450 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:54:55,782 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:54:55,798 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 17:54:56,799 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 17:54:56,799 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:01:55,640 - ERROR - Failed to insert/update attack_sessions: (pymysql.err.ProgrammingError) (1146, "Table 'deceptibank.attack_sessions' doesn't exist")
+[SQL: SELECT attack_sessions.id AS attack_sessions_id, attack_sessions.session_id AS attack_sessions_session_id, attack_sessions.ip_address AS attack_sessions_ip_address, attack_sessions.user_agent AS attack_sessions_user_agent, attack_sessions.first_seen AS attack_sessions_first_seen, attack_sessions.last_seen AS attack_sessions_last_seen, attack_sessions.total_requests AS attack_sessions_total_requests, attack_sessions.threat_score AS attack_sessions_threat_score, attack_sessions.attack_types AS attack_sessions_attack_types, attack_sessions.geolocation AS attack_sessions_geolocation, attack_sessions.is_blocked AS attack_sessions_is_blocked, attack_sessions.notes AS attack_sessions_notes 
+FROM attack_sessions 
+WHERE attack_sessions.session_id = %(session_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'session_id_1': 'eyJyb2xlIjoiYWRtaW4iLCJ1c2VyX2lkIjo2fQ.aOueFw.DB06uh-_muCkH0yny672Zdfezn8', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-10-12 18:01:55,655 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:01:58,829 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 18:01:58,829 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:01:58,845 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 18:01:58,849 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:02:07,392 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 18:02:07,392 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:02:07,789 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 18:02:07,791 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:02:08,342 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 18:02:08,346 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:09:45,860 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 18:09:45,876 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:09:46,450 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-12 18:09:46,469 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-12 18:34:24,727 - ERROR - Failed saving HoneypotLog row: add
+2025-10-12 18:34:24,733 - ERROR - trigger_attack failed in before_request: rollback
+2025-10-13 10:39:27,829 - ERROR - Error sending OTP: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor d9443c01a7336-29034f3de4asm120903805ad.92 - gsmtp')
+2025-10-13 10:40:18,523 - ERROR - Error sending OTP: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 98e67ed59e1d1-33b5288eae7sm10465357a91.0 - gsmtp')
+2025-10-13 11:05:40,344 - INFO - OTP sent to fredolina.roselin@gmail.com
+2025-10-13 20:21:55,915 - INFO - OTP sent to fredolinasekar@gmail.com
+2025-10-13 20:23:19,412 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 20:23:19,412 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 20:24:01,038 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 20:24:01,040 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 20:24:59,274 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 20:24:59,276 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 22:48:11,139 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 22:48:11,140 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 22:48:11,155 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 22:48:11,155 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 22:48:52,345 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 22:48:52,346 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 22:48:52,350 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 22:48:52,350 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 22:49:06,676 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 22:49:06,681 - ERROR - Honeypot trigger failed: rollback
+2025-10-13 22:49:06,686 - ERROR - Failed to insert/update attack_sessions: add
+2025-10-13 22:49:06,686 - ERROR - Honeypot trigger failed: rollback
+2025-10-14 09:58:05,107 - INFO - OTP sent to siva.peruman2208@gmail.com
+2025-10-14 15:41:28,486 - INFO - OTP sent to lurdhumarysekar@gmail.com
+2025-10-16 06:45:14,242 - INFO - OTP sent to fredolina.roselin@gmail.com
+2025-10-16 06:45:18,040 - INFO - OTP sent to fredolina.roselin@gmail.com
+2025-10-16 14:30:55,071 - INFO - OTP sent to prdhrshnmm@gmail.com
+2025-10-16 14:30:58,145 - INFO - OTP sent to prdhrshnmm@gmail.com
+2025-10-24 00:56:27,930 - INFO - OTP sent to sr6249713@gmail.com
+2026-01-20 20:45:41,337 - INFO - OTP sent to fredolinasekar@gmail.com
